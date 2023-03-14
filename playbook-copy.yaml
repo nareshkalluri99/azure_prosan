@@ -1,5 +1,5 @@
 - name: Ansible Copy Example Local to Remote
-  hosts: "{{ target_hosts}}"
+  hosts: "{{ target_hosts }}"
   tasks:
     - name: copying file with playbook
       become: true 
