@@ -1,0 +1,11 @@
+- name: Ansible Copy Example Local to Remote
+  hosts: "{{ target_hosts}}"
+  tasks:
+    - name: copying file with playbook
+      become: true 
+      copy:
+        src: ~/Downloads/index.html
+        dest: /var/www/html
+        owner: apache
+        group: apache        
+        mode: 0644
