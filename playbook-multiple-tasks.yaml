@@ -1,7 +1,7 @@
 # ansible-playbook basic_example.yml --tags file_creation
 ---
   - name: Playbook
-    hosts: webservers
+    hosts: 127.0.0.1
     become: yes
     become_user: root
     tasks:

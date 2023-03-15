@@ -4,8 +4,8 @@
     - name: copying file with playbook
       become: true 
       copy:
-        src: ~/Downloads/index.html
-        dest: /var/www/html
-        owner: apache
-        group: apache        
+        src: /root/ansible-to-copy.txt
+        dest: /opt
+        owner: venkat
+        group: venkat        
         mode: 0644

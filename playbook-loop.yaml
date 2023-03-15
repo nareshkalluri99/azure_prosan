@@ -5,10 +5,10 @@
     become_user: root
     tasks:
     - name: Set permissions to the files
-      ansible.builtin.file:
-      path: "{{ item }}"
-      mode: '600'
-      loop:
-        - /opt/ansible-file1.txt
-        - /opt/ansible-file1.txt
-        - /opt/ansible-file1.txt
+      file:
+        path: "{{ item }}"
+        mode: '600'
+        loop:
+         - /opt/ansible-file1.txt
+         - /opt/ansible-file2.txt
+         - /opt/ansible-file3.txt
