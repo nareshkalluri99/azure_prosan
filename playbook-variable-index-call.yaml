@@ -1,0 +1,17 @@
+- hosts: all
+  vars:
+    continents:
+      - Africa
+      - Asia
+      - South America
+      - North America
+      - Europe
+    continents-list2: [Africa, Asia, South America, North America, Europe]      
+      
+  tasks:
+  - name: Ansible List variable Example
+    debug:
+      msg: "{{ continents [1] }}"
+  - name: variables list from continents-list2
+    debug:
+      msg: "{{ continents-list2 [2] }}"
