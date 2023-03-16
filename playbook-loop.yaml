@@ -1,6 +1,7 @@
 ---
   - name: set permissions to the files
-    hosts: minimal
+#    hosts: minimal
+    hosts: "{{ target_hosts  }}"
     become: yes
     become_user: root
     tasks:
@@ -8,7 +9,7 @@
       file:
         path: "{{ item }}"
         mode: '600'
-        loop:
+      loop:
          - /opt/ansible-file1.txt
          - /opt/ansible-file2.txt
          - /opt/ansible-file3.txt
