@@ -1,0 +1,14 @@
+---
+  - name: set permissions to the files
+    hosts: all
+    become: yes
+    become_user: root
+    tasks:
+    - name: Set permissions to the files
+      ansible.builtin.file:
+        path: "{{ loop }}"
+        mode: '600'
+        loop:
+          - /opt/ansible-file1.txt
+          - /opt/ansible-file1.txt
+          - /opt/ansible-file1.txt

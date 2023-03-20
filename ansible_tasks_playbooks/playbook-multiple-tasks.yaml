@@ -1,0 +1,25 @@
+          - /opt/ansible-file1.txt
+          - /opt/ansible-file2.txt
+         dest: /opt/ansible-file1.zip
+         format: zip
+      - name: Ansible register variable basic example
+        shell: "find *.txt"
+        args:
+         chdir: "/opt"
+         register: reg_output
+      - debug:
+         var: reg_output
+      - name: create a text file in opt only if it doesn't already exist
+        shell: echo "Hello, World!" > /opt/ansible_test_file.txt
+        args:
+          creates: "/opt/ansible_test_file.txt"
+        tags:
+         - file_creation
+      - name: create a text file in /opt/ansible with the /bin/sh shell
+        shell: echo "ansible test ansible task" > /opt/ansible/test/test_file.txt
+        register: shell_output
+      - debug: var=shell_output
+        tags:
+         - file-with-debug
+
+

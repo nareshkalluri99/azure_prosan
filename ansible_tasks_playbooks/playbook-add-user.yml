@@ -1,0 +1,13 @@
+---
+  - name: Playbook
+    hosts: all
+    become: yes
+    become_user: root
+    tasks:
+    - name: Add the user 'Naresh' with a specific uid and a primary group of 'admin'
+      ansible.builtin.user:
+        name: Naresh
+        comment: Naresh Kalluri
+        shell: /bin/bash
+        uid: 1004
+        group: root
