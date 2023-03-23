@@ -1,8 +1,0 @@
-- hosts: all
-  vars:
-    greeting: Prosan Devops Course 
-
-  tasks:
-  - name: Ansible Basic Variable Example
-    debug:
-      msg: "{{ greeting }}"
