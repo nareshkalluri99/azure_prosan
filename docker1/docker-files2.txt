@@ -1,0 +1,6 @@
+FROM centos:latest
+LABEL author=saikrishnakodali11@gmail.com
+ENV node=deployment
+ENV platform=x64
+RUN set -x \
+	yum install -y ps curl
