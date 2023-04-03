@@ -1,5 +1,5 @@
 FROM centos:latest
-LABEL author=naresh-kalluri@gmail.com
+LABEL author=nareshkalluri.99@gmail.com
 ENV node=deployment
 ENV platform=x64
 RUN set -x \
