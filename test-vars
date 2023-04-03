@@ -1,5 +1,0 @@
-######
-# common variables
-######
-
-export TF_VAR_region="eastus"
