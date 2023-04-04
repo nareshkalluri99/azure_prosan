@@ -11,7 +11,7 @@ variables:
   ImageName: 'venkatdock7/azure-devops-prosan-demo:$(Build.BuildId)'
 
 
- stages:
+stages:
 - stage: Build
   displayName: Build image
   jobs:  
