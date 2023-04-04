@@ -21,8 +21,8 @@ stages:
     - task: Docker@1
       displayName: 'Build the Docker image'
       inputs:
-        containerregistrytype: 'Container Registry'
-        dockerRegistryEndpoint: 'Docker Hub'
+#        containerregistrytype: 'Container Registry'
+#        dockerRegistryEndpoint: 'Docker Hub'
         command: 'Build an image'
         dockerFile: '/docker_files/best-practice-alpine'
         imageName: '$(ImageName)'
