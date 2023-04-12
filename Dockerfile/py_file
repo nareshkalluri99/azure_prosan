@@ -1,0 +1,17 @@
+FROM ubuntu
+
+RUN apt-get update
+
+RUN apt-get install -y python
+
+ADD sum_of_3_5.py /home/sum_of_3_5.py
+
+ADD count=0
+for i in range(10):
+    if i%3==0 or i%5==0:
+        count=count+i
+print(count) /home/sum_of_3_5.py
+
+CMD ["/home/sum_of_3_5.py"]
+
+ENTRYPOINT ["python"]
