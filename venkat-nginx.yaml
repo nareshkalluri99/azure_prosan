@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: venkat-nginx
+  name: venkat-nginx
+  namespace: venkat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: venkat-nginx
+  template:
+    metadata:
+      labels:
+        app: venkat-nginx
+    spec:
+      containers:
+      - image: prosandemoecr.azurecr.io/nginx:v1
+        name: venkat-nginx-01
+      - image: prosandemoecr.azurecr.io/httpd:latest
+        name: venkat-httpd-01
+        ports:
+        - containerPort: 443
+            

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: venkat-httpd
+  name: venkat-httpd
+  namespace: venkat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: venkat-httpd
+  template:
+    metadata:
+      labels:
+        app: venkat-httpd
+    spec:
+      containers:
+      - image: prosandemoecr.azurecr.io/httpd:latest
+        name: venkat-httpd-01
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: venkat-httpd-yaml
+  namespace: venkat
+spec:
+  type: LoadBalancer
+  selector:
+    app: venkat-httpd
+  ports:
+      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      # Optional field
+      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      
+            
