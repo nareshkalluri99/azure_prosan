@@ -1,0 +1,7 @@
+
+E:\kubectl_yaml_files>kubectl get pod busybox-demo -n venkat -o jsonpath='{.metadata.name}'
+'busybox-demo'
+E:\kubectl_yaml_files>kubectl get pod busybox-demo -n venkat -o jsonpath='{.status.hostIP}'
+'10.224.0.5'
+E:\kubectl_yaml_files>kubectl get pod busybox-demo -n venkat -o jsonpath='{.status.podIP}'
+'10.244.0.46'
